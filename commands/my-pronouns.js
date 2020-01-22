@@ -2,7 +2,7 @@ const Helper = require('../HelperFunctions.js')
 
 module.exports = {
 	name: 'my-pronouns',
-	description: 'Sets User\' pronouns',
+	description: 'Sets User\'s pronouns',
 	execute(message,args){
 		const user = message.guild.member(message.author.id);
 		if(args.length != 1){

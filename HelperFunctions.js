@@ -9,3 +9,8 @@ exports.GSAAddRole = function(user, role, message){
 	if(new_member){message.channel.send(`Welcome to GSA, ${user}!`);}
 	message.delete();
 }
+
+exports.GSARemoveRole = function(user, role, message){
+	user.removeRole(role).catch(console.error);
+	message.delete();
+}

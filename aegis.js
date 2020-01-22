@@ -46,4 +46,17 @@ client.on('message', message => {
 	}
 });
 
+client,on('guildMemberAdd', member => {
+	const channel = member.guild.channels.find(ch => ch.name === 'member-log');
+
+	if(!channel){
+		console.log("!!! new member channel not found !!!");
+		return;
+	}
+
+	channel.send(`__**Welcome to the CU Boulder Gender & Sexuality Alliance Discord server, ${member}!**__\n\n`+
+							 "Please take a moment to read through our information and rules, as it will inform you about how you can unlock the rest of the chat channels!\n\n"+
+						 	 "__If you are having trouble assigning your pronouns or sexuality, please check out the Bot Info channel or message a moderator.__");
+});
+
 client.login(config.token);
