@@ -47,7 +47,7 @@ client.on('message', message => {
 });
 
 client.on('guildMemberAdd', member => {
-	const channel = member.guild.channels.find(ch => ch.name === 'member-log');
+	const channel = member.guild.channels.find(ch => ch.name === 'landing-pad');
 
 	if(!channel){
 		console.log("!!! new member channel not found !!!");

@@ -1,3 +1,5 @@
+const Helper = require('../HelperFunctions.js')
+
 module.exports = {
 	name: 'help',
 	description: 'Shows help info',
