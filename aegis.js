@@ -32,9 +32,17 @@ client.on('message', message => {
 		console.log('command detected');
 		const args = message.content.slice(config.prefix.length).split(/ +/);
 		const command = args.shift().toLowerCase();
-		args[0] = args[0].toLowerCase();
+		//args[0] = args[0].toLowerCase();
 
-		if(!client.commands.has(command)) return;
+		if(!client.commands.has(command)){
+			console.log(`Dont have command:`+command+`\n`);
+			var itt = client.commands.keys();
+			console.log(`Commands:\n`);
+			for(const x of itt){
+				console.log(x.value + `\n`);
+			}
+			return;
+		}
 
 		try{
 			client.commands.get(command).execute(message, args);

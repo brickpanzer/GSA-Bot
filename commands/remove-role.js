@@ -1,7 +1,7 @@
 const Helper = require('../HelperFunctions.js')
 
 module.exports = {
-	name: 'remove-roll',
+	name: 'remove-role',
 	description: 'Removes any roll a user does not want',
 	execute(message, args){
 		const user = message.guild.member(message.author.id);
