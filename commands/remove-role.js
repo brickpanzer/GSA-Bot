@@ -9,78 +9,68 @@ module.exports = {
 																  `__For Example: !remove-role They/Them__`);
 		}
 		else{
+			var role_tmp;
 			switch(args[0]){
 
 				// Pronouns Begin Here
 				case "she/her":
-				const role = message.guild.roles.find(role => role.name === 'She/Her');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'She/Her');
 				break;
 				case "he/him":
-				const role = message.guild.roles.find(role => role.name === 'He/Him');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'He/Him');
 				break;
 				case "they/them":
-				const role = message.guild.roles.find(role => role.name === 'They/Them');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'They/Them');
 				break;
 				case "he/they":
-				const role = message.guild.roles.find(role => role.name === 'He/They');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'He/They');
 				break;
 				case "she/they":
-				const role = message.guild.roles.find(role => role.name === 'She/They');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'She/They');
 				break;
 				case "he/she":
-				const role = message.guild.roles.find(role => role.name === 'He/She');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'He/She');
 				break;
 				case "any/all":
-				const role = message.guild.roles.find(role => role.name === 'Any/All');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'Any/All');
 				break;
 				case "questioning(gender)":
-				const role = message.guild.roles.find(role => role.name === 'Questioning(Gender)');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'Questioning(Gender)');
 				break;
 
 				//Sexuality Begins Here
 				case "gay":
-				const role = message.guild.roles.find(role => role.name === 'Gay');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'Gay');
 				break;
 				case "lesbian":
-				const role = message.guild.roles.find(role => role.name === 'Lesbian');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'Lesbian');
 				break;
 				case "bisexual":
-				const role = message.guild.roles.find(role => role.name === 'Bisexual');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'Bisexual');
 				break;
 				case "pansexual":
-				const role = message.guild.roles.find(role => role.name === 'Pansexual');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'Pansexual');
 				break;
 				case "asexual":
-				const role = message.guild.roles.find(role => role.name === 'Asexual');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'Asexual');
 				break;
 				case "demisexual":
-				const role = message.guild.roles.find(role => role.name === 'Demisexual');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'Demisexual');
 				break;
 				case "queer":
-				const role = message.guild.roles.find(role => role.name === 'Queer');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'Queer');
 				break;
 				case "questioning(sexuality)":
-				const role = message.guild.roles.find(role => role.name === 'Questioning(Sexuality)');
-				HelperFunctions.GSARemoveRole(user,role,message);
+				role_tmp = message.guild.roles.find(role => role.name === 'Questioning(Sexuality)');
 				break;
 
 				default:
 				return message.channel.send(`Sorry, I did not recognize that role, make sure you have formatted and spelled the role exactly as it appears under your profile.`);
+			}
+
+			if(role_tmp){
+				const role = role_tmp;
+				HelperFunctions.GSARemoveRole(user,role,message);
 			}
 		}
 	}
