@@ -5,6 +5,8 @@ module.exports = {
 	description: 'Sets user\'sexuality',
 	execute(message,args){
 		const user = message.guild.member(message.author.id);
+		console.log(`Sexuality:`+args[0]);
+		if(args[0]){args[0] = args[0].toLowerCase();}
 		if(args.length != 1){
 			return message.channel.send('**Please provide your sexuality after the command!**\n'+
 																	'For example: !my-sexuality Asexual\n'+

@@ -5,6 +5,7 @@ module.exports = {
 	description: 'Sets User\'s pronouns',
 	execute(message,args){
 		const user = message.guild.member(message.author.id);
+		if(args[0]){args[0] = args[0].toLowerCase();}
 		if(args.length != 1){
 			return message.channel.send('**Please provide your pronouns after the command!**\n'+
 																	'For example: !my-pronouns They/Them\n'+
